@@ -30,18 +30,6 @@ jobs:
     - name: Setup LuaRocks
       uses: leafo/gh-actions-luarocks@v4
     
-    - name: Install Dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y dos2unix
-        
-    - name: Fix Line Endings
-      run: |
-        dos2unix build.lua
-        dos2unix start.lua
-        dos2unix lax.lua
-        dos2unix yaml.lua
-    
     - name: Build Site
       run: |
         lua build.lua
