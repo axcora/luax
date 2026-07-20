@@ -1,0 +1,47 @@
+<section class="container">
+<div class="row py-5">
+
+<div class="col-md-10 mx-auto text-center p-3 p-md-5">
+<h2 class="fw-bold">@metadata.home.support.title</h2>
+<p>@metadata.home.support.description</p>
+
+</div>
+
+<div class="col-md-4 p-3 p-md-5 text-center">
+<div class="shadow-sm rounded-5 p-2 bg-primary">
+<div class="shadow-sm rounded-5 p-3 p-md-5 bg-light text-dark">
+<a href="@metadata.home.support.paypal.url" title="@metadata.home.support.paypal.description">
+<svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path opacity="0.1" d="M13 3H7.76556C6.75692 3 5.90612 3.75107 5.78101 4.75193L4.12403 18.0077C4.05817 18.5346 4.46901 19 5 19H6.30575C7.28342 19 8.1178 18.2932 8.27853 17.3288L8.8356 13.9864C8.93047 13.4172 9.42294 13 10 13H13C19 13 19 3 13 3Z" fill="#4F46E5"></path> <path d="M13 3H7.76556C6.75692 3 5.90612 3.75107 5.78101 4.75193L4.12403 18.0077C4.05817 18.5346 4.46901 19 5 19H6.30575C7.28342 19 8.1178 18.2932 8.27853 17.3288L8.8356 13.9864C8.93047 13.4172 9.42294 13 10 13H13C19 13 19 3 13 3Z" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M7.32317 18.7378L7.14142 20.01C7.06678 20.5325 7.47221 21 8 21V21H9.43845C10.3562 21 11.1561 20.3754 11.3787 19.4851L11.7575 17.9701C11.9 17.4 12.4123 17 13 17V17H16C21.393 17 21.9386 8.92097 17.6368 7.28632" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+</a>
+<h3 class="h5 fw-bold">@metadata.home.support.paypal.title</h3>
+<p><a href="@metadata.home.support.paypal.url">@metadata.home.support.paypal.description</a></p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4 p-3 p-md-5 text-center">
+<div class="shadow-sm rounded-5 p-2 bg-primary">
+<div class="shadow-sm rounded-5 p-3 p-md-5 bg-light text-dark">
+<a href="@metadata.home.support.gumroad.url" title="@metadata.home.support.gumroad.description">
+<svg width="64px" height="64px" viewBox="0 0 48 48" id="a" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <defs> <style>.c{fill:none;stroke:#4F46E5;stroke-linecap:round;stroke-linejoin:round;}</style> </defs> <circle id="b" class="c" cx="24" cy="24" r="21.5"></circle> <g> <polyline class="c" points="24.4179 24.6915 34.9851 24.6915 34.9851 34.4328 30.597 34.4328 30.5672 24.6915"></polyline> <path class="c" d="m30.5685,25.1194c0,4.7761-2.4491,9.8806-7.673,9.8806s-9.8806-3.6716-9.8806-10.5672,4.2388-11.4328,11.2438-11.4328,10.1592,4.3582,10.1592,7.9104h-5.1343c0-1.6418-1.7811-4.0896-5.0249-4.0896s-6.2587,2.8657-6.2587,7.1791,2.3284,7.1493,6,7.1493,5.8507-3.602,5.8507-6.4577"></path> </g> </g></svg>
+</a>
+<h3 class="h5 fw-bold">@metadata.home.support.gumroad.title</h3>
+<p><a href="@metadata.home.support.gumroad.url">@metadata.home.support.gumroad.description</a></p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4 p-3 p-md-5 text-center">
+<div class="shadow-sm rounded-5 p-2 bg-primary">
+<div class="shadow-sm rounded-5 p-3 p-md-5 bg-light text-dark">
+<a href="@metadata.home.support.github.url" title="@metadata.home.support.github.description">
+<svg width="64px" height="64px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.475 2 2 6.475 2 12C2 16.425 4.8625 20.1625 8.8375 21.4875C9.3375 21.575 9.525 21.275 9.525 21.0125C9.525 20.775 9.5125 19.9875 9.5125 19.15C7 19.6125 6.35 18.5375 6.15 17.975C6.0375 17.6875 5.55 16.8 5.125 16.5625C4.775 16.375 4.275 15.9125 5.1125 15.9C5.9 15.8875 6.4625 16.625 6.65 16.925C7.55 18.4375 8.9875 18.0125 9.5625 17.75C9.65 17.1 9.9125 16.6625 10.2 16.4125C7.975 16.1625 5.65 15.3 5.65 11.475C5.65 10.3875 6.0375 9.4875 6.675 8.7875C6.575 8.5375 6.225 7.5125 6.775 6.1375C6.775 6.1375 7.6125 5.875 9.525 7.1625C10.325 6.9375 11.175 6.825 12.025 6.825C12.875 6.825 13.725 6.9375 14.525 7.1625C16.4375 5.8625 17.275 6.1375 17.275 6.1375C17.825 7.5125 17.475 8.5375 17.375 8.7875C18.0125 9.4875 18.4 10.375 18.4 11.475C18.4 15.3125 16.0625 16.1625 13.8375 16.4125C14.2 16.725 14.5125 17.325 14.5125 18.2625C14.5125 19.6 14.5 20.675 14.5 21.0125C14.5 21.275 14.6875 21.5875 15.1875 21.4875C17.1727 20.8173 18.8977 19.5415 20.1198 17.8395C21.3419 16.1376 21.9995 14.0953 22 12C22 6.475 17.525 2 12 2Z" stroke="#4F46E5" stroke-linejoin="round"></path> </g></svg>
+</a>
+<h3 class="h5 fw-bold">@metadata.home.support.github.title</h3>
+<p><a href="@metadata.home.support.github.url">@metadata.home.support.github.description</a></p>
+</div>
+</div>
+</div>
+
+</div>
+</section>

@@ -1,0 +1,36 @@
+<meta name="google-site-verification" content="fJTzwsNcz2AtRxQpJZzU7db7TLPdR_lKSAXfyWDtHB4">
+<meta name="google-site-verification" content="Xi3WpckDbMBvm1pdlc5XukNoA9uWDmnExIiOeaTOxq0">
+    <title>@title</title>
+    <meta name="description" content="@description">
+    <meta property="og:type" content="@og_type">
+    <meta property="og:title" content="@og_title">
+    <meta property="og:description" content="@og_description">
+    <meta property="og:image" content="@metadata.url@og_image">
+    <meta property="og:url" content="@metadata.url">
+    <meta property="og:site_name" content="@metadata.title">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@og_title">
+    <meta name="twitter:description" content="@og_description">
+    <meta name="twitter:image" content="@metadata.url@og_image">
+    <meta name="generator" content="LUAX v1.0 - LUA Static Site Generator by Axcora">
+    @if metadata.twitter_user
+        <meta name="twitter:site" content="@metadata.twitter_user">
+    @end
+    @if metadata.favicon
+        <link rel="icon" href="@metadata.url@metadata.favicon">
+    @end    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "@json_ld_type",
+        "headline": "@json_ld_headline",
+        "description": "@json_ld_description",
+        "url": "@json_ld_url",
+        "datePublished": "@json_ld_date",
+        "dateModified": "@json_ld_date",
+        "author": {
+            "@type": "Person",
+            "name": "@json_ld_author"
+        }
+    }
+    </script>

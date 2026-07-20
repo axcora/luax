@@ -1,0 +1,37 @@
+<section>
+<div class="row">
+<div class="col-md-8 col-8 p-3 p-md-5 ">
+        <h2 class="fw-bold">@metadata.home.blog_title</h2>
+        </div>
+        <div class="col-md-4 col-4 p-3 p-md-5 ">
+        <p class="text-end"><a href="/blog.html">Explore All <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+</svg></a></p>
+        </div>
+        </div>
+        <div class="row">
+            @for posts
+                <article class="col-md-4 p-3">
+                <div class="p-3 shadow-sm rounded-5 bg-light">
+                    <a href="@url" title="@title">
+                        <img class="img-fluid rounded-5"
+                            alt="@title" 
+                            width="100%" 
+                            height="100%"
+                            src="@image" />
+                    </a>   
+                    <div class="p-2">
+                        <h3 class="h5">
+                            <a href="@url">@title</a>
+                        </h3>                        
+                        <time class="small" datetime="@date">@date</time>
+                        @if author
+                            <span class="post-author">by @author</span>
+                        @end
+                        <p class="post-excerpt">@excerpt</p>
+                    </div>
+                    </div>
+                </article>
+            @end
+        </div>                   
+</section>

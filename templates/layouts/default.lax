@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+@include(seo)
+<link rel="stylesheet" href="@metadata.url/css/style.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6422989243541464" crossorigin="anonymous"></script>
+</head>
+<body>
+@include(header)
+@content
+@include(support)
+@include(footer)
+</body>
+</html>

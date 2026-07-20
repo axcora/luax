@@ -1,0 +1,75 @@
+<section class="row mt-5 mb-3">
+
+<div class="col-md-4 p-3 p-md-5">
+    <h2><a href="@metadata.url" class="fw-bold">@metadata.home.info_section.article.why.title</a></h2>
+    <p>@metadata.home.info_section.article.why.text</p>
+    <ul>
+    @for metadata.home.info_section.article.why.i
+        <li>@info</li>
+    @end
+    </ul>
+</div>
+
+<div class="col-md-4 p-3 p-md-5">
+    <h2><a href="@metadata.url" class="fw-bold">@metadata.home.info_section.article.why.title</a></h2>
+    <p>@metadata.home.info_section.why.text</p>
+    <ul>
+    @for metadata.home.info_section.article.why.i
+        <li>@info</li>
+    @end
+    </ul>
+</div>
+
+<div class="col-md-4 p-3 p-md-5">
+    <h2><a href="@metadata.url" class="fw-bold">@metadata.home.info_section.article.concept.title</a></h2>
+    <p>@metadata.home.info_section.article.concept.text</p>
+    <ul>
+    @for metadata.home.info_section.article.concept.i
+        <li>@info</li>
+    @end
+    </ul>
+</div>
+
+<div class="col-md-12 p-3">
+<div class="bg-light rounded-5 shadow-sm p-3 p-md-5 bg-samar">
+<div class="row p-3 bg-light rounded-5 shadow-sm opacity-75">
+
+<div class="col-md-7 p-3">
+  <h2><a href="@metadata.url" class="fw-bold">@metadata.home.info_section.why.title</a></h2>
+
+    <ul>
+    @for metadata.home.info_section.why.list
+        <li>@text</li>
+    @end
+    </ul>
+
+    <h2><a href="@metadata.url" class="fw-bold">@metadata.home.info_section.build.title</a></h2>
+
+    <p>@metadata.home.info_section.build.text</p>
+
+    <hr>
+
+    <p><strong>🚀 Built with ❤️ using <a href="https://luax.axcora.com">LUAX</a></strong></p>
+</div>
+
+
+<div class="col-md-5 p-3">
+ <h2>Get Started</h2>
+
+    <pre>
+git clone https://github.com/mesinkasir/luax.git
+cd luax
+luax build
+luax start
+    </pre>
+
+    <p>Your site is now running at http://localhost:8080</p>
+    <p>Upload dist/ folder in to your hosting or build using github action, Delpoy on Cpanel, VPS, Vercel, Cloudflare, Netlify, or Github Pages.</p>
+</div>
+
+</div>
+</div>
+</div>
+
+</section>
+        

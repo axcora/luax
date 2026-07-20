@@ -1,0 +1,146 @@
+url: http://localhost:8080
+title: LUAX SSG
+description: Static Site Generator built with Lua
+image: /img/axcoralogored.webp
+favicon: /img/axcoralogored.webp
+twitter_user: https://www.axcora.com
+
+navbar:
+  logo: /img/axcoralogored.webp
+  list:
+    - title: Home
+      url: /
+    - title: About
+      url: /about.html
+    - title: Docs
+      url: /docs.html
+    - title: Blog
+      url: /blog.html
+
+home:
+  title: LUAX SSG
+  description: "Static Site Generator built with Lua. Fast, lightweight, and modern."
+  image: /img/axcoralogored.webp
+  intro: "LUAX is a lightweight, fast, and modern static site generator built with Lua. It uses the LAX template engine to generate static websites from Markdown content with YAML frontmatter."
+  button1: 
+    text: Get Started
+    url: /docs.html
+  button2: 
+    text: Download
+    url: "https://creativitaz.gumroad.com/l/luax"
+  blog_title: Latest Posts
+  intro_section: 
+    seo: 
+      title: SEO
+      text: Meta Tags, Open Graph, JSON-LD, sitemap, RSS
+    markdown: 
+      title: Markdown
+      text: Write content in Markdown
+    yaml: 
+      title: YAML
+      text: Write configuration and setup in YAML data
+    tagger: 
+      title: TAGS
+      text: Automatic tags article blog posts
+    fast: 
+      title: Fast
+      text: luax build - Builds in milliseconds
+    assets: 
+      title: Assets
+      text: Automatic public assets copying
+  info_section: 
+    article: 
+      why:
+        title: Why Lua?
+        text: "Lua is a lightweight, fast, and embeddable scripting language. It's perfect for building CLI tools like static site generators because:"
+        i: 
+          - info: Fast execution - Lua is one of the fastest scripting languages
+          - info: Small footprint - No heavy dependencies or package managers
+          - info: Portable - Runs on Windows, Linux, and macOS
+          - info: Simple syntax - Easy to learn and modify
+      concept:
+        title: The Concept
+        text: "LUAX follows the same concept as popular SSGs like Jekyll, Hugo, and 11ty:"
+        i: 
+          - info: Content - Write in Markdown with YAML frontmatter
+          - info: Templates - Use LAX template engine for layouts
+          - info: Build - Generate static HTML files
+          - info: Deploy - Host anywhere
+      what:
+        title: What Makes LUAX Different? 
+        text: Read why you need lua for your website projects.
+        i: 
+          - info: Pure Lua - No JavaScript, no Ruby, no Python , no PHP
+          - info: Minimal - Just Lua and a few files
+          - info: Fast - Builds in milliseconds
+          - info: Simple - Easy to understand and customize
+    why: 
+      title: Why Choose LUAX?
+      list: 
+        - text: Markdown - Write content in Markdown
+        - text: Tags - Automatic tag pages
+        - text: Pagination - Blog posts pagination
+        - text: SEO - Open Graph, JSON-LD, sitemap, RSS
+        - text: Assets - Automatic public assets copying
+        - text: Fast - Builds in milliseconds
+        - text: Simple - Easy to customize
+    build: 
+      title: Built for Simplicity
+      text: LUAX was created to make static site generation simple and accessible. No complex configurations, no heavy dependencies, no steep learning curve. Just Lua and Markdown.
+  support: 
+    title: Support Luax
+    description: If you find LUAX helpful, consider supporting us.
+    paypal: 
+      title: PayPal
+      description: Support via PayPal
+      url: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JVZVXBC4N9DAN
+    gumroad: 
+      title: GumRoad
+      description: Support via GumRoad
+      url: https://creativitaz.gumroad.com/coffee
+    github: 
+      title: GitHub
+      description: Support via Github
+      url: https://github.com/sponsors/mesinkasir
+
+blog: 
+  title: Blog
+  description: Last update from article blog
+  image: /img/axcoralogored.webp
+
+tags: 
+  title: Tags
+  description: All tags from posts
+  image: /img/axcoralogored.webp
+
+footer:
+  nav1:
+    title: LUAX
+    description: Static Site Generator built with Lua
+  nav2:
+    - title: Home
+      url: /
+    - title: About
+      url: /about.html
+    - title: Docs
+      url: /docs.html
+    - title: Blog
+      url: /blog.html
+  nav3:
+    - title: Download
+      url: https://creativitaz.gumroad.com/l/luax
+    - title: Github
+      url: https://github.com/mesinkasir/luax
+    - title: Hire Us
+      url: https://www.fiverr.com/creativitas/design-your-modern-website-using-jekyll
+  nav4:
+    - title: AX SSG
+      url: https://ax.axcora.com
+    - title: SSG Axcora
+      url: https://ssg.axcora.com
+    - title: PERL SSG
+      url: https://onta.axcora.com
+    - title: BAX SSG
+      url: https://bax.axcora.com
+    - title: PHP SSG
+      url: https://markdownuts.axcora.com

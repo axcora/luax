@@ -1,0 +1,7 @@
+@layout(base)
+<main class="container">
+@include(hero)
+@include(intro)
+@include(info)
+@include(article)
+</main>
