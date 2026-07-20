@@ -27,6 +27,17 @@ local function write_file(path, content)
         print("ERROR: write_file called with empty path")
         return
     end
+    
+    -- Buat folder jika belum ada (UNIVERSAL)
+    local folder = path:match("(.*)[/\\]")
+    if folder then
+        if package.config:sub(1,1) == "\\" then
+            os.execute('mkdir "' .. folder .. '" 2>nul')
+        else
+            os.execute('mkdir -p "' .. folder .. '" 2>/dev/null')
+        end
+    end
+    
     local f = io.open(path, "w")
     if not f then
         print("ERROR: Cannot open file: " .. tostring(path))
@@ -413,9 +424,15 @@ local start_time = os.clock()
 local metadata = load_metadata()
 local partials = load_partials()
 
-os.execute("mkdir dist 2>nul")
-os.execute("mkdir dist\\img 2>nul")
-os.execute("mkdir dist\\tags 2>nul")
+if package.config:sub(1,1) == "\\" then
+    os.execute("mkdir dist 2>nul")
+    os.execute("mkdir dist\\img 2>nul")
+    os.execute("mkdir dist\\tags 2>nul")
+else
+    os.execute("mkdir -p dist 2>/dev/null")
+    os.execute("mkdir -p dist/img 2>/dev/null")
+    os.execute("mkdir -p dist/tags 2>/dev/null")
+end
 
 copy_public()
 
@@ -497,8 +514,13 @@ end
 local per_page = 6
 local total_posts = #posts
 local total_pages = math.max(1, math.ceil(total_posts / per_page))
-os.execute("mkdir dist\\blog 2>nul")
-os.execute("mkdir dist\\blog\\page 2>nul")
+if package.config:sub(1,1) == "\\" then
+    os.execute("mkdir dist\\blog 2>nul")
+    os.execute("mkdir dist\\blog\\page 2>nul")
+else
+    os.execute("mkdir -p dist/blog 2>/dev/null")
+    os.execute("mkdir -p dist/blog/page 2>/dev/null")
+end
 
 for page_num = 1, total_pages do
     local start_idx = (page_num - 1) * per_page + 1
