@@ -2,6 +2,8 @@
 local yaml = {}
 
 function yaml.parse(content)
+    content = content:gsub("^%z", "")
+    content = content:gsub("\r\n", "\n")
     local data = {}
     local stack = {data}
     local indent_stack = {0}

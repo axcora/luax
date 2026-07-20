@@ -42,7 +42,13 @@ end
 
 local function list_files(dir)
     local files = {}
-    local handle = io.popen('dir "' .. dir .. '" /b 2>nul')
+    local cmd
+    if package.config:sub(1,1) == "\\" then
+        cmd = 'dir "' .. dir .. '" /b 2>nul'
+    else
+        cmd = 'ls -1 "' .. dir .. '" 2>/dev/null'
+    end
+    local handle = io.popen(cmd)
     if handle then
         for file in handle:lines() do
             table.insert(files, file)
@@ -54,11 +60,24 @@ end
 
 local function copy_public()
     local public_dir = "public"
-    local check = io.popen('if exist "' .. public_dir .. '\\" (echo 1) else (echo 0)')
-    local result = check:read("*all")
-    check:close()
-    if result:match("0") then return end
-    os.execute('xcopy "' .. public_dir .. '" "dist\\" /E /I /Y >nul 2>nul')
+    
+    -- Cek OS
+    if package.config:sub(1,1) == "\\" then
+        -- Windows
+        local check = io.popen('if exist "' .. public_dir .. '\\" (echo 1) else (echo 0)')
+        local result = check:read("*all")
+        check:close()
+        if result:match("0") then return end
+        os.execute('xcopy "' .. public_dir .. '" "dist\\" /E /I /Y >nul 2>nul')
+    else
+        -- Linux/Mac
+        local check = io.popen('test -d "' .. public_dir .. '" && echo 1 || echo 0')
+        local result = check:read("*all")
+        check:close()
+        if result:match("0") then return end
+        os.execute('cp -r "' .. public_dir .. '"/* "dist/" 2>/dev/null')
+    end
+    
     print(c.green .. "✔" .. c.reset .. " Public assets copied")
 end
 
@@ -423,6 +442,25 @@ end
 local start_time = os.clock()
 
 local metadata = load_metadata()
+if not metadata.home then
+    print(c.yellow .. "⚠ WARNING: metadata.home is nil, creating fallback" .. c.reset)
+    metadata.home = {
+        title = metadata.title or "LUAX SSG",
+        description = metadata.description or "",
+        image = metadata.image or "",
+    }
+end
+
+-- FIX: Pastikan metadata.home.title ada
+if not metadata.home.title then
+    metadata.home.title = metadata.title or "LUAX SSG"
+end
+if not metadata.home.description then
+    metadata.home.description = metadata.description or ""
+end
+if not metadata.home.image then
+    metadata.home.image = metadata.image or ""
+end
 local partials = load_partials()
 
 if package.config:sub(1,1) == "\\" then
