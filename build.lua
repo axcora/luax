@@ -761,7 +761,7 @@ else
 end
 write_file("dist/sitemap.xml", generate_sitemap(posts, site_url))
 write_file("dist/feed.xml", generate_rss(posts, metadata, site_url))
-write_file("dist/robots.txt", 'User-agent: *\nAllow: /\nSitemap: ' .. site_url .. 'sitemap.xml\n')
+write_file("dist/robots.txt", 'User-agent: *\nAllow: /\nSitemap: ' .. site_url .. '/sitemap.xml\n')
 write_file("dist/humans.txt", '/* TEAM */\n    Architect: Axcora Tech\n    Website: ' .. site_url .. '\n    Labs: axcora.com\n/* SITE */\n    Generator: LUAX SSG\n    Built: ' .. os.date("%Y-%m-%d %H:%M:%S") .. '\n    Powered by: Lua + LAX Template\n')
 
 local build_time = os.clock() - start_time
