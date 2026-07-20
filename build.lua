@@ -23,7 +23,15 @@ local function read_file(path)
 end
 
 local function write_file(path, content)
+    if not path or path == "" then
+        print("ERROR: write_file called with empty path")
+        return
+    end
     local f = io.open(path, "w")
+    if not f then
+        print("ERROR: Cannot open file: " .. tostring(path))
+        return
+    end
     f:write(content)
     f:close()
 end
