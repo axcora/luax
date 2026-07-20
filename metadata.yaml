@@ -19,15 +19,15 @@ navbar:
 
 home:
   title: LUAX SSG
-  description: "Static Site Generator built with Lua. Fast, lightweight, and modern."
+  description: Static Site Generator built with Lua. Fast, lightweight, and modern.
   image: /img/axcoralogored.webp
-  intro: "LUAX is a lightweight, fast, and modern static site generator built with Lua. It uses the LAX template engine to generate static websites from Markdown content with YAML frontmatter."
+  intro: LUAX is a lightweight, fast, and modern static site generator built with Lua. It uses the LAX template engine to generate static websites from Markdown content with YAML frontmatter.
   button1: 
     text: Get Started
     url: /docs.html
   button2: 
     text: Download
-    url: "https://creativitaz.gumroad.com/l/luax"
+    url: https://creativitaz.gumroad.com/l/luax
   blog_title: Latest Posts
   intro_section: 
     seo: 
@@ -52,7 +52,7 @@ home:
     article: 
       why:
         title: Why Lua?
-        text: "Lua is a lightweight, fast, and embeddable scripting language. It's perfect for building CLI tools like static site generators because:"
+        text: Lua is a lightweight, fast, and embeddable scripting language. It's perfect for building CLI tools like static site generators because:
         i: 
           - info: Fast execution - Lua is one of the fastest scripting languages
           - info: Small footprint - No heavy dependencies or package managers
@@ -60,7 +60,7 @@ home:
           - info: Simple syntax - Easy to learn and modify
       concept:
         title: The Concept
-        text: "LUAX follows the same concept as popular SSGs like Jekyll, Hugo, and 11ty:"
+        text: LUAX follows the same concept as popular SSGs like Jekyll, Hugo, and 11ty:
         i: 
           - info: Content - Write in Markdown with YAML frontmatter
           - info: Templates - Use LAX template engine for layouts
