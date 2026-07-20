@@ -27,17 +27,10 @@ local function write_file(path, content)
         print("ERROR: write_file called with empty path")
         return
     end
-    
-    -- Buat folder jika belum ada (UNIVERSAL)
-    local folder = path:match("(.*)[/\\]")
-    if folder then
-        if package.config:sub(1,1) == "\\" then
-            os.execute('mkdir "' .. folder .. '" 2>nul')
-        else
-            os.execute('mkdir -p "' .. folder .. '" 2>/dev/null')
-        end
+    if not content then
+        print("ERROR: write_file called with empty content for: " .. path)
+        return
     end
-    
     local f = io.open(path, "w")
     if not f then
         print("ERROR: Cannot open file: " .. tostring(path))
@@ -261,7 +254,10 @@ local function render_content_template(template_name, context, metadata, partial
         template_file = read_file(path)
         if template_file then break end
     end
-    if not template_file then return "" end
+    if not template_file then 
+        print("ERROR: Template not found: " .. tostring(template_name))
+        return "" 
+    end
     
     local engine = Lax.new(template_file)
     for k, v in pairs(context) do engine:set(k, v) end
@@ -269,7 +265,12 @@ local function render_content_template(template_name, context, metadata, partial
     engine:set("site", metadata)
     for name, content in pairs(partials) do engine:partial(name, content) end
     
-    return engine:render()
+    local result = engine:render()
+    if not result then
+        print("ERROR: render returned nil for: " .. tostring(template_name))
+        return ""
+    end
+    return result
 end
 
 local function get_image_with_fallback(item_image, metadata)
@@ -694,8 +695,8 @@ local index_posts = {}
 for i = 1, math.min(6, #posts) do table.insert(index_posts, posts[i]) end
 
 local index_context = {
-    title = metadata.home.title,
-    description = metadata.home.description,
+    title = metadata.home and metadata.home.title or metadata.title or "LUAX SSG",
+    description = metadata.home and metadata.home.description or metadata.description or "",
     posts = index_posts,
     pages = pages,
     current_url = "/",
@@ -714,7 +715,12 @@ local index_context = {
 }
 index_context.metadata = metadata
 
-write_file("dist/index.html", render_content_template("layouts/index.lax", index_context, metadata, partials))
+local html = render_content_template("layouts/index.lax", index_context, metadata, partials)
+if html and html ~= "" then
+    write_file("dist/index.html", html)
+else
+    print("ERROR: Failed to render index.lax")
+end
 write_file("dist/sitemap.xml", generate_sitemap(posts, site_url))
 write_file("dist/feed.xml", generate_rss(posts, metadata, site_url))
 write_file("dist/robots.txt", 'User-agent: *\nAllow: /\nSitemap: ' .. site_url .. 'sitemap.xml\n')
