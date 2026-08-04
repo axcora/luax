@@ -1,4 +1,3 @@
--- yaml.lua - FIX NESTED
 local yaml = {}
 
 function yaml.parse(content)
