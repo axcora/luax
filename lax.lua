@@ -1,4 +1,3 @@
--- lax.lua - LAX Template Engine (SEDERHANA)
 local Lax = {}
 Lax.__index = Lax
 
