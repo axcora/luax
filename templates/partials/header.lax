@@ -1,11 +1,11 @@
 <header class="container bg-light rounded-5 desktop mt-3">
     <nav class="row">
-        <a href="/" class="col-md-4 col-12 p-3 navbar-brand">
+        <a href="@metadata.url" class="col-md-4 col-12 p-3 navbar-brand">
             @if metadata.navbar.logo
                 <img src="@metadata.navbar.logo" alt="@metadata.title"
                 width="40" height="40" class="img-fluid"/>
             @else
-                @metadata.title
+                @metadata.navbar.title
             @end
         </a>
         

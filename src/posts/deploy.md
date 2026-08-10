@@ -4,7 +4,10 @@ title: Deploying LUAX Sites
 date: 2026-07-15
 image: /img/neonluax.webp
 author: Axcora
-tags: deployment, github-pages, netlify
+tags: 
+  - deployment
+  - github-pages
+  - netlify
 excerpt: Learn how to deploy your LUAX site to production.
 ---
 

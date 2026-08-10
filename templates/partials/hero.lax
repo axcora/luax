@@ -2,14 +2,14 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6">
-                <h1 class="display-4 mb-3"><a href="@metadata.url" class="fw-bold">
-                @metadata.home.title
+                <h1 class="display-4 mb-3"><a href="@current_url" class="fw-bold">
+                @title
                 </a></h1>
-                <h2 class="lead mb-4">@metadata.home.description</h2>
-                <p class="small">@metadata.home.intro</p>
+                <h2 class="lead mb-4">@description</h2>
+                <p class="small">@intro</p>
                 <div class="d-flex gap-3 flex-wrap">
-                    <a href="@metadata.home.button1.url" class="btn btn-primary btn-lg">@metadata.home.button1.text</a>
-                    <a href="@metadata.home.button2.url" class="btn btn-outline-secondary btn-lg">@metadata.home.button2.text</a>
+                    <a href="@button1.url" class="btn btn-primary btn-lg">@button1.text</a>
+                    <a href="@button2.url" class="btn btn-outline-secondary btn-lg">@button2.text</a>
                 </div>
             </div>
             <div class="col-md-6 mt-4 mt-md-0">

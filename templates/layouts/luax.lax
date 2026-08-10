@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+@include(luax/seo)
+<link rel="stylesheet" href="@luax.url/css/lua-ssg.css">
+</head>
+<body>
+<div class="luax-root" id="top">
+@include(luax/nav)
+@content
+@include(luax/hero)
+@include(luax/mission)
+@include(luax/count)
+@include(luax/features)
+@include(luax/showcase)
+@include(luax/start)
+@include(luax/support)
+@include(luax/copyrights)
+</div>
+<script>
+function setAcc(i){document.querySelectorAll('.acc').forEach((el,idx)=>el.classList.toggle('active', idx===i))}
+function copyCmd(){const t=`git clone https://github.com/mesinkasir/luax.git\ncd luax\nluax build\nluax start`;navigator.clipboard.writeText(t).then(()=>{const b=document.getElementById('copyBtn');b.textContent='COPIED ✓';setTimeout(()=>b.textContent='COPY',2000)})}
+document.addEventListener('click', (e)=>{const m=document.getElementById('mobileMenu'); const toggle=document.querySelector('.nav-mobile-toggle'); if(!m.contains(e.target) && !toggle.contains(e.target)) m.classList.remove('open')})
+</script>
+</body>
+</html>
