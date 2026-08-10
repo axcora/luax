@@ -1,0 +1,5 @@
+<footer>
+<div class="container text-center">
+<span>© LUAX SSG • BUILT WITH <a href="https://www.lua.org/">LUA</a></span>
+</div>
+</footer>

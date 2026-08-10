@@ -1,0 +1,52 @@
+<section class="hero">
+<div class="hero-bg">
+  <img 
+  src="@luax.hero.image" 
+  width="100%" height="100%"
+  alt="@luax.description"/>
+  </div>
+  <div class="container">
+  <div class="row">
+  <div class="col-lg-2"></div>
+  <div class="col-lg-8 p-3">  
+    <div class="eyebrow mt-5">
+	<a href="@luax.url" class="inhe">@luax.hero.info</a>
+	</div>	
+    <h1 class="hero-title"><span>@luax.hero.title1</span><i>@luax.hero.title2</i><span>@luax.hero.title3</span><span>@luax.hero.title4</span></h1>
+    <p class="hero-desc">@luax.hero.description</p>
+    <div class="hero-actions">
+      <a href="@luax.hero.button.url" class="btn-luax">@luax.hero.button.text</a>
+      <a href="@luax.hero.button_ghost.url" class="btn-ghost">@luax.hero.button_ghost.text ↓</a>
+    </div>	
+    <div class="row text-center mt-5">
+      @for luax.hero.count
+      <div class="col-lg-3 col-6 p-3">
+	  <strong>@number</strong><br/>@text</span>
+	  </div>
+      @end
+  </div>
+  <div class="row">
+	<div class="col-lg-2"></div>
+    <div class="terminal opacity-75 col-lg-8 mt-5">
+      <div class="term-head">
+        <div class="term-dots"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div>
+        <div class="term-title">badger@burrow: ~/luax</div>
+        <div class="term-copy" id="copyBtn" onclick="copyCmd()">COPY</div>
+      </div>
+      <div class="term-body">
+        @for hero.terminal
+        <div class="term-line"><span class="term-prompt">$</span>
+		<span class="term-text">@command</span></div>
+        @end
+        <div class="term-hint"><span>→ @luax.hero.terminal_info </span><span>◍ LIVE</span></div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="photo-proof">
+  <img src="@luax.hero.badge.image"
+  loading="lazy" 
+  class="bg-light"
+  alt="@luax.hero.badge.title"><span>@luax.hero.badge.title</span>
+  </div>
+</section>

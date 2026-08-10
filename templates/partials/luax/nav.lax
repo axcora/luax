@@ -1,0 +1,27 @@
+<nav class="nav">
+  <div class="nav-logo">
+    <a href="@luax.url">
+    <img class="img-logo" 
+    width="32" height="32"
+    alt="@luax.title"
+    src="@luax.navbar.logo"
+    loading="eager"
+    />
+    </a>
+    <span>@luax.navbar.title</span></div>
+  <div class="nav-links">
+  @for luax.navbar.list
+  <a href="@url">@title</a>
+  @end
+   <a href="@luax.navbar.button.url" class="nav-cta">@luax.navbar.button.title</a>
+  </div>
+  <button class="nav-mobile-toggle" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="menu">☰</button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  @for luax.navbar.nav_mobile.list
+  <a href="@url" onclick="this.parentElement.classList.remove('open')">@title</a>
+  @end
+  @for luax.navbar.nav_mobile.item
+  <a href="@url" target="_blank">@title ↗</a>
+  @end
+</div>

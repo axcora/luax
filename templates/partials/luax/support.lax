@@ -1,0 +1,21 @@
+<section class="support" id="support">
+<div class="container">
+<div class="row">
+  <div class="col-lg-4 p-3">
+  <div class="glass p-5 sup">
+  <h3>@luax.support.gumroad.title</h3>
+  <p>@luax.support.gumroad.text</p><a href="@luax.support.gumroad.url" target="_blank">@luax.support.gumroad.title ↗</a>
+  </div>
+  </div>
+  <div class="col-lg-4 p-3">
+  <div class="glass p-5 sup">
+  <h3>@luax.support.paypal.title</h3><p>@luax.support.paypal.text</p><a href="@luax.support.paypal.url" target="_blank">@luax.support.paypal.title ↗</a>
+  </div>
+  </div>
+  <div class="col-lg-4 p-3">
+  <div class="glass p-5 sup">
+  <h3>★ @luax.support.github.title</h3><p>@luax.support.github.text</p><a href="@luax.support.github.url" target="_blank" style="border-color:var(--amber);color:var(--amber)">@luax.support.github.title ↗</a></div>
+  </div>
+  </div>
+  </div>
+</section>

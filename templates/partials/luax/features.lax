@@ -1,0 +1,12 @@
+<section class="features container" id="features">
+  <span class="section-label">@luax.why.info</span>
+  <h2 class="section-title"><a href="@luax.url" class="inhe">@luax.why.title1</a><br>@luax.why.title2</em> @luax.why.title3</h2>
+  <div class="feat-grid">
+    <div class="feat"><div class="feat-icon">⚡</div><h3>@luax.why.build.title</h3><p>@luax.why.build.text</p></div>
+    <div class="feat"><div class="feat-icon">◍</div><h3>@luax.why.lua.title</h3><p>@luax.why.lua.text</p></div>
+    <div class="feat"><div class="feat-icon">✦</div><h3>@luax.why.templates.title</h3><p>@luax.why.templates.text</p></div>
+    <div class="feat"><div class="feat-icon">☾</div><h3>@luax.why.jamstack.title</h3><p>@luax.why.jamstack.text</p></div>
+    <div class="feat"><div class="feat-icon">◫</div><h3>@luax.why.seo.title</h3><p>@luax.why.seo.text</p></div>
+    <div class="feat"><div class="feat-icon">✧</div><h3>@luax.why.deploy.title</h3><p>@luax.why.deploy.text</p></div>
+  </div>
+</section>

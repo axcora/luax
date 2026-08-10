@@ -1,0 +1,37 @@
+<section class="mission" id="mission">
+  <div class="mission-bg">
+	<img src="@luax.mission.image" 
+  alt="@luax.mission.title3"
+  >
+  </div>
+  <div class="container">
+  <div class="row">
+  <div class="col-lg-6 p-3">
+  <div class="p-5">
+    <span class="section-label">@luax.mission.info</span>
+    <h2 class="section-title">@luax.mission.title1 <em>@luax.mission.title2</em>, <a href="@luax.url" class="inhe">@luax.mission.title3.</a></h2>
+    <p class="section-p">@luax.mission.description</p>
+    <div class="mission-cards">
+      <div class="m-card"><i>◍</i><div><h3><a href="@luax.url" class="inhe">@luax.mission.philosophy.title</a></h3><p>@luax.mission.philosophy.text</p></div></div>
+      <div class="m-card"><i>⚑</i><div><h3><a href="@luax.url" class="inhe">@luax.mission.protocol.title</a></h3><p>@luax.mission.protocol.text</p></div></div>
+    </div>
+  </div>
+  </div>
+  <div class="col-lg-6 p-3">
+    <div class="about-visual p-3">
+  <img src="@luax.mission.card.image"
+	alt="@luax.mission.card.title"><div class="about-badge">
+    <div>
+      <strong>@luax.mission.card.title</strong><br>
+    <span class=""text-lu">@luax.mission.card.info</span></div><span>◍ ACTIVE</span>
+  </div>
+</div>
+<div class="p-3">
+  <h3><a href="@luax.url">@luax.mission.slogan.title</a></h3>
+<p>
+<span class="text-lu">@luax.mission.slogan.text</span>
+  </p>
+</div>
+  </div>
+  </div>
+</section>

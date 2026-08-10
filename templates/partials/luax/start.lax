@@ -1,0 +1,193 @@
+<section class="getstarted" id="get-started">
+  <div class="container">
+  <div class="row">
+  
+<div class="col-lg-6 p-3">
+<span class="section-label"><a href="@luax.url" class="inhe">@luax.getstart.info</a></span>
+<h2 class="section-title">@luax.getstart.title1 <em>@luax.getstart.title2</em> @luax.getstart.title3</h2>
+<p class="section-p">@luax.getstart.text</p>
+<div class="accordion" id="accordion">
+<div class="acc active" onclick="setAcc(0)"><div class="acc-head">
+<h3>01 — INSTALLATION</h3><span>+</span></div>
+<div class="acc-body p-5">
+<p>Clone and run. No package manager maze. Binary is self-contained.</p>
+<pre>
+# open terminal CMD
+git clone https://github.com/mesinkasir/luax.git
+cd luax
+luax build
+luax start</pre>
+<p>Download via gumroad: </p>
+<p><a class="btn btn-ghost" href="https://gumroad.com" target="_blank">Download ZIP file</a></p>
+</div></div>
+
+<div class="acc" onclick="setAcc(1)"><div class="acc-head">
+<h3>02 — SETUP</h3><span>+</span></div>
+<div class="acc-body p-5">
+<p>
+  Open on data/metadata.yaml and update your site title, author, and URL.
+<pre>
+# SITE AND SEO CONNFIGURATION
+url: http://localhost:8080
+title: LUAX SSG
+description: Static Site Generator built with Lua
+image: /img/axcoralogored.webp
+favicon: /img/axcoralogored.webp
+twitter_user: https://www.axcora.com
+
+# NAVBAR SETUP
+navbar:
+  logo: /img/axcoralogored.webp
+  list:
+    - title: Home
+      url: /
+    - title: Blog
+      url: /blog.html
+
+# HOME PAGE SETUP
+home:
+  title: LUAX SSG
+  description: Static Site Generator built with Lua
+  image: /img/axcoralogored.webp
+  blog_title: Latest Posts
+
+# BLOG PAGE LIST SETUP
+blog: 
+  title: Blog
+  description: Last update from article blog
+  image: /img/axcoralogored.webp
+
+# TAGSS PAGE SETUP
+tags: 
+  title: Tags
+  description: All tags from posts
+  image: /img/axcoralogored.webp
+
+# FOOTER SETUP
+footer:
+  nav1:
+    title: LUAX
+    description: Static Site Generator built with Lua
+  nav2:
+    - title: Home
+      url: /
+    - title: Blog
+      url: /blog.html
+  nav3:
+    - title: Axcora SSG
+      url: https://ssg.axcora.com
+    - title: AX SSG
+      url: https://ax.axcora.
+    - title: Markdownuts
+      url: https://markdownuts.axcora.com
+  nav4:
+    - title: ONTA
+      url: https://onta.axcora.com
+    - title: PYCORA
+      url: https://pycora.axcora.com
+    - title: BAX
+      url: https://bax.axcora.com
+</pre>
+</p>
+  
+</div></div>
+<div class="acc" onclick="setAcc(2)"><div class="acc-head"><h3>03 — MEDIA</h3><span>+</span></div><div class="acc-body p-5">
+<p>
+Place your images, videos, and other media in the /public folder. Luax will copy them to /dist during build.</p><code>public/</code>
+<pre>
+├ public/
+├── img/
+│   ├── logo.png
+│   └── hero.jpg
+├── css/
+│   └── style.css
+├── js/
+│   └── main.js
+└── file/
+    ├── hello.pdf
+    └── hello.docx
+</pre>
+</div></div>
+
+<div class="acc" onclick="setAcc(3)"><div class="acc-head"><h3>04 — CONTENT</h3><span>+</span></div><div class="acc-body p-5">
+<h4>Static Pages</h4>
+<p>
+Static Page . - To update static page you can access on <code>src/pages</code> then create a new markdown file , example <code>src/pages/about.md</code>
+</p>
+<pre>
+---
+title: About LUAX
+description: LUAX is a simple static site generator built with Lua. Learn about the project, why we built it, and how it works.
+layout: page.lax
+image: /img/darkluax2.webp
+---
+## About LUAX SSG
+
+LUAX is a **static site generator built with Lua**. It was created to make building static websites simple, fast, and fun.
+</pre>
+<h4>Blog Posts</h4>
+<p>
+Blog posts . - To update article blog posts you can access on <code>src/posts</code> then create a new markdown file , example <code>src/posts/my-first-post.md</code>
+</p>
+<pre>
+---
+layout: post.lax
+title: Deploying LUAX Sites
+date: 2026-07-15
+image: /img/neonluax.webp
+author: Axcora
+tags: deployment, github-pages, netlify
+excerpt: Learn how to deploy your LUAX site to production.
+---
+# Deploying LUAX Sites
+
+Deploy your LUAX site to any hosting platform.
+</pre>
+</div></div>
+
+
+<div class="acc" onclick="setAcc(4)"><div class="acc-head"><h3>05 — DEPLOY</h3><span>+</span></div><div class="acc-body p-5">
+<p>
+Next you can build production with run this command
+<pre>luax build</pre>
+and upload your dist folder in to your hosting.<br/>
+Github pages is ready with deploy.yml just rename deploy.yml.example to be deploy.yml - Next activate your github pages.
+</p>
+</div></div>
+
+</div>
+</div>
+  
+<div class="col-lg-6 p-3">
+    <div class="code-block">
+      <div class="code-head"><div style="display:flex;gap:6px"><i style="width:10px;height:10px;border-radius:50%;background:#ff5f57;display:block"></i>
+        <i style="width:10px;height:10px;border-radius:50%;background:#febc2e;display:block"></i><i style="width:10px;height:10px;border-radius:50%;background:#28c840;display:block"></i></div>
+        <div class="mono" style="font-size:10px;letter-spacing:0.2em;color:var(--muted)">@luax.terminal.title</div><div class="mono" style="font-size:10px;color:var(--amber)">@luax.terminal.dot</div></div>
+      <div class="code-body">
+        <h3>@luax.terminal.info</h3>
+          <hr/>
+          @for luax.terminal.list
+        <h4><a href="@luax.url" class="inhe">@title</a></h4>
+        <p class="text-lu">@.text</p><hr/>
+        @end
+
+        <div style="margin-top:18px;padding-top:16px;border-top:1px dashed rgba(255,255,255,0.1)">
+          <div class="mono" style="font-size:11px;color:var(--muted)">@luax.terminal.command_title</div>
+          <div style="margin-top:8px;line-height:1.9">
+          @for hero.terminal
+            <span class="k">$</span> @command<br>
+            @end
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-12" 
+	style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+      <a href="@luax.terminal.button.url" target="_blank" class="btn-luax" style="flex:1;justify-content:center">
+        @luax.terminal.button.text ↗</a>
+      <a href="#top" class="btn-ghost" style="flex:1;justify-content:center">BACK TO TOP ↑</a>
+    </div>
+	</div>
+  </div>
+  </div>
+</section>
