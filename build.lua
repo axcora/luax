@@ -680,31 +680,39 @@ end
 
 local function load_partials()
     local partials = {}
-    
+    local is_win = package.config:sub(1,1) == "\\"
     local function scan_directory(dir_path, prefix)
-        local files = list_files(dir_path)
-        if not files then return end
-        
-        for _, file in ipairs(files) do
-            local full_path = dir_path .. "/" .. file
-            
-            if is_dir(full_path) then
-                local new_prefix = prefix and (prefix .. "/" .. file) or file
+        local cmd
+        if is_win then
+            local d = dir_path:gsub("/", "\\")
+            cmd = 'dir "'..d..'" /b /a 2>nul'
+        else
+            cmd = 'ls -1 "'..dir_path..'" 2>/dev/null'
+        end
+        local handle = io.popen(cmd)
+        if not handle then return end
+        for file in handle:lines() do
+            local full_path = dir_path.."/"..file
+            local is_directory = is_dir(full_path)
+            if is_directory then
+                local new_prefix = prefix and (prefix.."/"..file) or file
                 scan_directory(full_path, new_prefix)
             elseif file:match("%.lax$") then
                 local content = read_file(full_path)
                 if content then
-                    local name = file:gsub("%.lax$", "")
-                    if prefix then
-                        name = prefix .. "/" .. name
-                    end
+                    local name = file:gsub("%.lax$","")
+                    if prefix then name = prefix.."/"..name end
                     partials[name] = content
                 end
             end
         end
+        handle:close()
     end
-    
     scan_directory("templates/partials", nil)
+    local count = 0
+    for _ in pairs(partials) do count = count + 1 end
+    print(c.dim.." Partials loaded: "..count..c.reset)
+    for k,_ in pairs(partials) do print(c.dim.." - "..k..c.reset) end
     return partials
 end
 
