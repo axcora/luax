@@ -681,38 +681,38 @@ end
 local function load_partials()
     local partials = {}
     local is_win = package.config:sub(1,1) == "\\"
-    local function scan_directory(dir_path, prefix)
-        local cmd
-        if is_win then
-            local d = dir_path:gsub("/", "\\")
-            cmd = 'dir "'..d..'" /b /a 2>nul'
-        else
-            cmd = 'ls -1 "'..dir_path..'" 2>/dev/null'
-        end
-        local handle = io.popen(cmd)
-        if not handle then return end
-        for file in handle:lines() do
-            local full_path = dir_path.."/"..file
-            local is_directory = is_dir(full_path)
-            if is_directory then
-                local new_prefix = prefix and (prefix.."/"..file) or file
-                scan_directory(full_path, new_prefix)
-            elseif file:match("%.lax$") then
-                local content = read_file(full_path)
-                if content then
-                    local name = file:gsub("%.lax$","")
-                    if prefix then name = prefix.."/"..name end
-                    partials[name] = content
-                end
-            end
-        end
-        handle:close()
+    local cmd
+    if is_win then
+        -- Windows: cari semua.lax recursive
+        cmd = 'dir /s /b "templates\\partials\\*.lax" 2>nul'
+    else
+        -- Linux (GitHub): find jauh lebih reliable dari ls + test -d
+        cmd = 'find templates -type f -iname "*.lax" -path "*partials*" 2>/dev/null'
     end
-    scan_directory("templates/partials", nil)
+
+    local handle = io.popen(cmd)
+    if not handle then
+        print("WARN: partials handle fail")
+        return partials
+    end
+
+    for full_path in handle:lines() do
+        local content = read_file(full_path)
+        if content then
+            -- ambil nama dari templates/partials/xxx.lax jadi xxx
+            local name = full_path:gsub(".*templates[/\\]partials[/\\]",""):gsub("%.lax$",""):gsub("\\","/")
+            partials[name] = content
+            print(" + partial: "..name)
+        end
+    end
+    handle:close()
+
     local count = 0
     for _ in pairs(partials) do count = count + 1 end
-    print(c.dim.." Partials loaded: "..count..c.reset)
-    for k,_ in pairs(partials) do print(c.dim.." - "..k..c.reset) end
+    print("Partials loaded: "..count)
+    if count == 0 then
+        print("ERROR: No partials found! Check git ls-files")
+    end
     return partials
 end
 
