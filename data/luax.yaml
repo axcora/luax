@@ -1,4 +1,4 @@
-url: http://localhost:8080
+url: https://luax.axcora.com
 title: LUA Static Site Generator
 description: Luax is a blazing fast static site generator written in pure Lua. Zero deps. No Node. Just you, markdown, and a wise badger guardian in a floating ruin.
 image: /img/luassg-staticsitegenerator.webp

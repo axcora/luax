@@ -1,5 +1,5 @@
-#url: https://luax.axcora.com
-url: http://localhost:8080
+url: https://luax.axcora.com
+#url: http://localhost:8080
 title: LUAX SSG
 description: Static Site Generator built with Lua
 image: /img/axcoralogored.webp
