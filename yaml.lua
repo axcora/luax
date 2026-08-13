@@ -74,7 +74,7 @@ function yaml.parse(content)
             goto continue
         end
 
-                local key, value = stripped:match("^([^:]+):%s*(.*)$") -- FIX: biar http:// gak kepotong
+        local key, value = stripped:match("^([^:]+):%s*(.*)$") -- FIX: biar http:// gak kepotong
         if key then
             key = key:gsub("^%s*(.-)%s*$", "%1")
             value = value:gsub('^"', ''):gsub('"$', '')

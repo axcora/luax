@@ -85,7 +85,7 @@ mission:
     text: Wise badger checks every build. If it smells like JavaScript, it gets buried.
   card: 
     title: Wise Guardian
-    image: /img/luassg-staticsitegenerator.webp
+    image: /img/luassg.webp
     info: Protector of the burrow
   slogan: 
     title: What is LUAX
