@@ -75,10 +75,37 @@ end
 local function copy_public()
     local public_dir = "public"
     if not is_dir(public_dir) then return end
+    local has_files = false
+    local p = io.popen('ls -A "'..public_dir..'" 2>/dev/null')
+    if p then
+        local out = p:read("*a")
+        p:close()
+        if out and out:match("%S") then has_files = true end
+    end
+    if is_windows or has_files then
+        
+        if package.config:sub(1,1) == "\\" then
+            local wp = io.popen('dir "'..public_dir..'" /b /a 2>nul')
+            if wp then
+                local o = wp:read("*a")
+                wp:close()
+                if o and o:match("%S") then has_files = true end
+            end
+        end
+    end
+    if not has_files then
+        
+        local f = io.open(public_dir.."/.gitkeep","r")
+        if f then f:close() has_files=false end
+        if not has_files then
+            
+            return
+        end
+    end
     if package.config:sub(1,1) == "\\" then
         os.execute('xcopy "'..public_dir..'" "dist\\" /E /I /Y >nul 2>nul')
     else
-        os.execute('cp -r "'..public_dir..'"/* "dist/" 2>/dev/null')
+        os.execute('mkdir -p dist 2>/dev/null; cp -r "'..public_dir..'"/* "dist/" 2>/dev/null || cp -r "'..public_dir..'"/. "dist/" 2>/dev/null')
     end
     print(c.green.."✔"..c.reset.." Public assets copied")
 end
@@ -119,7 +146,7 @@ local function load_data_folder()
                     end
                 end
                 flatten(data, name)
-                -- kalau file namanya metadata/home/index, expose top-level langsung biar @for hero.count dll work
+                
                 if name == "metadata" or name == "home" or name == "index" or name == "site" then
                     all.metadata = data
                     all.site = data
@@ -132,12 +159,12 @@ local function load_data_folder()
                         end
                     end
                 end
-                -- FIX: expose semua top-level key langsung biar support YAML kamu yang isinya navbar, hero, count semua jadi satu file
+                
                 for k,v in pairs(data) do
                     if all[k] == nil then
                         all[k] = v
                     end
-                    -- flatten juga untuk dot notation kayak navbar.list
+                    
                     if type(v) == "table" and not is_array(v) then
                         flatten(v, k)
                     end
@@ -683,10 +710,10 @@ local function load_partials()
     local is_win = package.config:sub(1,1) == "\\"
     local cmd
     if is_win then
-        -- Windows: cari semua.lax recursive
+        
         cmd = 'dir /s /b "templates\\partials\\*.lax" 2>nul'
     else
-        -- Linux (GitHub): find jauh lebih reliable dari ls + test -d
+        
         cmd = 'find templates -type f -iname "*.lax" -path "*partials*" 2>/dev/null'
     end
 
@@ -699,7 +726,7 @@ local function load_partials()
     for full_path in handle:lines() do
         local content = read_file(full_path)
         if content then
-            -- ambil nama dari templates/partials/xxx.lax jadi xxx
+            
             local name = full_path:gsub(".*templates[/\\]partials[/\\]",""):gsub("%.lax$",""):gsub("\\","/")
             partials[name] = content
             print(" + partial: "..name)
@@ -1070,16 +1097,20 @@ for _, item in ipairs(all_items) do
 
     if item.frontmatter then
         for k, v in pairs(item.frontmatter) do
-            if context[k] == nil then
-                context[k] = v
-            end
+            context[k] = v
+        end
+        if item.frontmatter.title then
+            context.title = item.frontmatter.title
+            item.title = item.frontmatter.title
+        end
+        if item.frontmatter.description then
+            context.description = item.frontmatter.description
         end
     end
 
     local raw_content = context.content or item.content or ""
     if raw_content:find("@for") or raw_content:find("@if") then
     local cEngine = Lax.new(raw_content)
-    for k,v in pairs(context) do cEngine:set(k,v) end
     if global_data then
         cEngine:set("luax", global_data)
         for k,v in pairs(global_data) do cEngine:set(k,v) end
@@ -1088,6 +1119,7 @@ for _, item in ipairs(all_items) do
             cEngine:set("site", global_data.metadata)
         end
     end
+    for k,v in pairs(context) do cEngine:set(k,v) end
     for name, pc in pairs(partials) do cEngine:partial(name, pc) end
     context.content = cEngine:render()
 end

@@ -1,6 +1,6 @@
 ---
 layout: starter.lax
-title: LUAX - Blazing Fast Lua SSG
+title: LUAX - Blazing Fast Lua SSGs
 description: LUAX is a blazing fast static site generator built with Lua + LAX Template Engine. Markdown, YAML, Tags, SEO & native versioned docs support.
 intro: LUAX - The lightweight, fast, and modern static site generator. Built with pure Lua, no Node, no Ruby. Write Markdown, build in milliseconds, deploy anywhere.
 button1: 
