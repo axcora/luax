@@ -18,7 +18,7 @@ cd luax
 luax build
 luax start</pre>
 <p>Download via gumroad: </p>
-<p><a class="btn btn-ghost" href="https://gumroad.com" target="_blank">Download ZIP file</a></p>
+<p><a class="btn btn-ghost" href="https://creativitaz.gumroad.com/l/luax" target="_blank">Download ZIP file</a></p>
 </div></div>
 
 <div class="acc" onclick="setAcc(1)"><div class="acc-head">
