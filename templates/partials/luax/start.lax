@@ -185,7 +185,7 @@ Github pages is ready with deploy.yml just rename deploy.yml.example to be deplo
 	style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
       <a href="@luax.terminal.button.url" target="_blank" class="btn-luax" style="flex:1;justify-content:center">
         @luax.terminal.button.text ↗</a>
-      <a href="#top" class="btn-ghost" style="flex:1;justify-content:center">BACK TO TOP ↑</a>
+      <a href="@luax.terminal.button_pro.url" class="btn-ghost" style="flex:1;justify-content:center">@luax.terminal.button_pro.text ↗</a>
     </div>
 	</div>
   </div>

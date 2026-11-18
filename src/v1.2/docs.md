@@ -65,11 +65,11 @@ luax/
 ├── luax.bat # Windows command line
 ├── luax.sh # Linux/Mac command line
 ├── src/
-│ ├── posts/ # Blog posts (.md)
-│ └── pages/ # Static pages (.md)
+│   ├── posts/ # Blog posts (.md)
+│   └── pages/ # Static pages (.md)
 ├── templates/
-│ ├── layouts/ # Layout templates (.lax)
-│ └── partials/ # Partial templates (.lax)
+│   ├── layouts/ # Layout templates (.lax)
+│   └── partials/ # Partial templates (.lax)
 ├── public/ # Static assets (css, img, js)
 └── dist/ # Generated output
 ```
@@ -140,42 +140,42 @@ LAX = Lua AXcora
 ### Basic Template
 
 ```lax
-@ layout(default)
+&#64;layout(default)
 
-< main>
-  < h1> @ title< /h1>
-  < p> @ content< /p>
-< /main>
+&lt;main&gt;
+  &lt;h1&gt;&#64;title&lt;/h1&gt;
+  &lt;p&gt;&#64;content&lt;/p&gt;
+&lt;/main&gt;
 ```
 
 ### Loops and Conditions
 
 ```lax
-@ for posts
-  < h2> @ title< /h2>
-  < p> @ excerpt< /p>
-@end
+&#64;for posts
+  &lt;h2&gt;&#64;title&lt;/h2&gt;
+  &lt;p&gt;&#64;excerpt&lt;/p&gt;
+&#64;end
 
-@ if author
-  < p>By @ author < /p>
-@ end
+&#64;if author
+  &lt;p&gt;By &#64;author&lt;/p&gt;
+&#64;end
 ```
 
 ### Partials
 
 ```lax
-@ include(header)
-@ include(footer)
+&#64;include(header)
+&#64;include(footer)
 ```
 
 ### Layouts
 
 ```lax
-@ layout(default)
+&#64;layout(default)
 
-< main>
-  @ content
-< /main>
+&lt;main&gt;
+  &#64;content
+&lt;/main&gt;
 ```
 
 ## Site Configuration
@@ -188,7 +188,7 @@ description: Static Site Generator built with Lua
 url: http://localhost:8080
 image: /img/logo.webp
 favicon: /img/favicon.webp
-twitter_user: @luaxssg
+twitter_user: &#64;luaxssg
 ```
 
 ## Templating Variables - LUAX V1.2 LAX Engine
@@ -201,17 +201,17 @@ Current page/post variables:
 
 | Variable | Description | Example |
 |----------|-------------|---------|
-| `@ title` | Page title from frontmatter | `LUAX SSG V1.2` |
-| `@ description` | Page description/excerpt | `Fast static site generator` |
-| `@ content` | Rendered HTML content | `< p>Content...< /p>` |
-| `@ date` | Page date | `2024-01-01` |
-| `@ current_url` | Current page URL (like `{ {page.url} }` in Jekyll) | `/v1.2/docs/` |
-| `@ url` | Alias for `@current_url` inside loops | `/posts/my-post/` |
-| `@ slug` | Page slug | `about` |
-| `@ author` | Page author | `LUAX Team` |
-| `@ image` | Page image | `/img/cover.webp` |
-| `@ layout` | Page layout | `index.lax` |
-| `@ collection` | Collection name (string) | `posts`, `v0.3`, `v1.2`, `root` |
+| `&#64;title` | Page title from frontmatter | `LUAX SSG V1.2` |
+| `&#64;description` | Page description/excerpt | `Fast static site generator` |
+| `&#64;content` | Rendered HTML content | `&lt;p&gt;Content...&lt;/p&gt;` |
+| `&#64;date` | Page date | `2024-01-01` |
+| `&#64;current_url` | Current page URL (like `&#123;&#123;page.url&#125;&#125;` in Jekyll) | `/v1.2/docs/` |
+| `&#64;url` | Alias for `&#64;current_url` inside loops | `/posts/my-post/` |
+| `&#64;slug` | Page slug | `about` |
+| `&#64;author` | Page author | `LUAX Team` |
+| `&#64;image` | Page image | `/img/cover.webp` |
+| `&#64;layout` | Page layout | `index.lax` |
+| `&#64;collection` | Collection name (string) | `posts`, `v0.3`, `v1.2`, `root` |
 
 ### Site / Metadata Variables
 
@@ -219,20 +219,20 @@ From `data/metadata.yaml`:
 
 | Variable | Description |
 |----------|-------------|
-| `@ metadata.title` | Site title |
-| `@ metadata.description` | Site description |
-| `@ metadata.url` | Site base URL |
-| `@ metadata.author` | Site author |
-| `@ metadata.image` | Default site image |
-| `@ site.title` | Alias for `@ metadata.title` |
-| `@ site.url` | Alias for `@ metadata.url` |
+| `&#64;metadata.title` | Site title |
+| `&#64;metadata.description` | Site description |
+| `&#64;metadata.url` | Site base URL |
+| `&#64;metadata.author` | Site author |
+| `&#64;metadata.image` | Default site image |
+| `&#64;site.title` | Alias for `&#64;metadata.title` |
+| `&#64;site.url` | Alias for `&#64;metadata.url` |
 
 **Usage:**
 
 ```lax
-< title>@ title< /title>
-< title>@ metadata.title< /title>
-< link rel="canonical" href="@metadata.url@current_url">
+&lt;title&gt;&#64;title&lt;/title&gt;
+&lt;title&gt;&#64;metadata.title&lt;/title&gt;
+&lt;link rel="canonical" href="&#64;metadata.url&#64;current_url"&gt;
 ```
 
 ### TOC
@@ -250,9 +250,9 @@ toc: true
 In layout `page.lax`:
 
 ```lax
-@ if toc_html
-  @ toc_html
-@ end
+&#64;if toc_html
+  &#64;toc_html
+&#64;end
 ```
 
 ### Footer Notes
@@ -260,18 +260,18 @@ In layout `page.lax`:
 Footer Notes Support in V1.2:
 
 ```md
-this is footnote[ ^1].
+This is footnote&#91;^1&#93;.
 
-[ ^1]: footnote here
+&#91;^1&#93;: footnote here
 ```
 
 ### Full URL Construction
 
-Jekyll `{ { page.url } }` equivalent in V1.2:
+Jekyll `&#123;&#123;page.url&#125;&#125;` equivalent in V1.2:
 
 ```lax
-@ current_url -> /v1.2/docs/
-@ metadata.url@current_url -> https://luax.axcora.com/v1.2/docs/
+&#64;current_url -&gt; /v1.2/docs/
+&#64;metadata.url&#64;current_url -&gt; https://luax.axcora.com/v1.2/docs/
 ```
 
 ### Inside Loops
@@ -279,88 +279,88 @@ Jekyll `{ { page.url } }` equivalent in V1.2:
 **Posts loop:**
 
 ```lax
-@ for collections.posts limit=3
-  < a href="@ url">@ title< /a>
-  < time>@ date< /time>
-  < p>@ excerpt< /p>
-@ end
+&#64;for collections.posts limit=3
+  &lt;a href="&#64;url"&gt;&#64;title&lt;/a&gt;
+  &lt;time&gt;&#64;date&lt;/time&gt;
+  &lt;p&gt;&#64;excerpt&lt;/p&gt;
+&#64;end
 ```
 
 **Collections:**
 
 ```lax
-@ for collections.v0.3
-  < a href="@ url">@ title< /a>
-@ end
+&#64;for collections.v0.3
+  &lt;a href="&#64;url"&gt;&#64;title&lt;/a&gt;
+&#64;end
 
-@ for collections.v1.2
-  < a href="@ url">@ title< /a>
-@ end
+&#64;for collections.v1.2
+  &lt;a href="&#64;url"&gt;&#64;title&lt;/a&gt;
+&#64;end
 ```
 
 #### Fallback Pattern
 
-V1.2 LAX does NOT support `or` inline, use `@if`:
+V1.2 LAX does NOT support `or` inline, use `&#64;if`:
 
 ```lax
-@ if title
-  < title>@ title< /title>
-@ else
-  < title>@ metadata.title< /title>
-@ end
+&#64;if title
+  &lt;title&gt;&#64;title&lt;/title&gt;
+&#64;else
+  &lt;title&gt;&#64;metadata.title&lt;/title&gt;
+&#64;end
 
-@ if og_image
-  <meta property="og:image" content="@ metadata.url@ og_image">
-@else
-  @ if image
-    < meta property="og:image" content="@ metadata.url @ image">
-  @ else
-    < meta property="og:image" content="@ metadata.url @ metadata.image">
-  @ end
-@ end
+&#64;if og_image
+  &lt;meta property="og:image" content="&#64;metadata.url&#64;og_image"&gt;
+&#64;else
+  &#64;if image
+    &lt;meta property="og:image" content="&#64;metadata.url&#64;image"&gt;
+  &#64;else
+    &lt;meta property="og:image" content="&#64;metadata.url&#64;metadata.image"&gt;
+  &#64;end
+&#64;end
 ```
 
 ### SEO Variables
 
 | Variable | Fallback Chain |
 |----------|----------------|
-| `@og_title` | `@og_title` > `@title` > `@metadata.title` |
-| `@og_description` | `@og_description` > `@description` > `@metadata.description` |
-| `@og_image` | `@og_image` > `@image` > `@metadata.image` |
-| `@og_type` | `website` / `article` |
-| `@current_url` | For `og:url` and canonical |
+| `&#64;og_title` | `&#64;og_title` > `&#64;title` > `&#64;metadata.title` |
+| `&#64;og_description` | `&#64;og_description` > `&#64;description` > `&#64;metadata.description` |
+| `&#64;og_image` | `&#64;og_image` > `&#64;image` > `&#64;metadata.image` |
+| `&#64;og_type` | `website` / `article` |
+| `&#64;current_url` | For `og:url` and canonical |
 
 ### Navigation Variables
 
 ```lax
-@base_url ->../
-@collection -> current collection name
-@collections -> all collections object
-@prev_post.url -> previous post URL
-@next_post.url -> next post URL
+&#64;base_url -&gt; ../
+&#64;collection -&gt; current collection name
+&#64;collections -&gt; all collections object
+&#64;prev_post.url -&gt; previous post URL
+&#64;next_post.url -&gt; next post URL
 ```
 
 ### Complete Head Example V1.2
 
 ```lax
-@ if title
-< title>@ title< /title>
-@ else
-< title>@ metadata.title < /title>
-@ end
+&#64;if title
+&lt;title&gt;&#64;title&lt;/title&gt;
+&#64;else
+&lt;title&gt;&#64;metadata.title&lt;/title&gt;
+&#64;end
 
-< meta property="og:url" content="@ metadata.url @ current_url">
-< link rel="canonical" href="@ metadata.url @ current_url">
+&lt;meta property="og:url" content="&#64;metadata.url&#64;current_url"&gt;
+&lt;link rel="canonical" href="&#64;metadata.url&#64;current_url"&gt;
 ```
 
 ### Summary
 
 | Category | Variables |
 |----------|-----------|
-| **Page** | `@title`, `@description`, `@content`, `@date`, `@current_url`, `@url`, `@slug`, `@author`, `@image`, `@layout`, `@collection` |
-| **Site** | `@metadata.*`, `@site.*` |
-| **Navigation** | `@base_url`, `@collections`, `@prev_post.url`, `@next_post.url` |
-| **SEO** | `@og_title`, `@og_description`, `@og_image`, `@og_type` |
+| **Page** | `&#64;title`, `&#64;description`, `&#64;content`, `&#64;date`, `&#64;current_url`, `&#64;url`, `&#64;slug`, `&#64;author`, `&#64;image`, `&#64;layout`, `&#64;collection` |
+| **Site** | `&#64;metadata.*`, `&#64;site.*` |
+| **Navigation** | `&#64;base_url`, `&#64;collections`, `&#64;prev_post.url`, `&#64;next_post.url` |
+| **SEO** | `&#64;og_title`, `&#64;og_description`, `&#64;og_image`, `&#64;og_type` |
 
 ## 📦 Building
 
@@ -428,26 +428,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout&#64;v4
     - name: Setup Lua
-      uses: leafo/gh-actions-lua@v10
+      uses: leafo/gh-actions-lua&#64;v10
       with:
         luaVersion: "5.4"
     - name: Build Site
       run: lua build.lua
     - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
+      uses: actions/upload-pages-artifact&#64;v3
       with:
-        path:./dist
+        path: ./dist
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: $&#123;&#123; steps.deployment.outputs.page_url &#125;&#125;
     runs-on: ubuntu-latest
     needs: build
     steps:
     - name: Deploy
-      uses: actions/deploy-pages@v4
+      uses: actions/deploy-pages&#64;v4
 ```
 
 ### Netlify

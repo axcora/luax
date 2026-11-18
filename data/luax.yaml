@@ -17,7 +17,7 @@ navbar:
     - title: GET STARTED
       url: "#get-started"
   button:
-    title: SUPPORT
+    title: Support
     url: "#support"
   nav_mobile:
     list:
@@ -139,8 +139,8 @@ showcase:
     text: RUN LUAX STARTER
     url: /starter/
   button_ghost: 
-    text: START BUILDING
-    url: "#get-starterd"
+    text: GET LUAX PRO
+    url: "https://luaxpro.axcora.com"
 
 getstart: 
   info: GET STARTED
@@ -173,6 +173,9 @@ terminal:
   button: 
     text: RUN LUAX
     url: /starter/
+  button_pro: 
+    text: RUN LUAX PRO
+    url: https://luaxpro.axcora.com
 
 support: 
   gumroad: 

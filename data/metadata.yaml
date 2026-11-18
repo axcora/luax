@@ -19,6 +19,8 @@ navbar:
       url: /v1.2/starter/
     - title: V.0.3
       url: /v0.3/starter/
+    - title: PRO
+      url: https://luaxpro.axcora.com
 
 home:
   support: 
@@ -73,6 +75,8 @@ footer:
       url: /posts/
     - title: Official
       url: /
+    - title: PRO
+      url: https://luaxpro.axcora.com
   nav3:
     - title: Download
       url: https://creativitaz.gumroad.com/l/luax
@@ -80,6 +84,8 @@ footer:
       url: https://github.com/mesinkasir/luax
     - title: Hire Us
       url: https://www.fiverr.com/creativitas/design-your-modern-website-using-jekyll
+    - title: All Projects
+      url: https://hockeycomputindo.com/
   nav4:
     - title: AX SSG
       url: https://ax.axcora.com
@@ -89,6 +95,8 @@ footer:
       url: https://cax.axcora.com
     - title: DAX SSG
       url: https://dax.axcora.com
+    - title: PYCORA
+      url: https://pycora.axcora.com
     - title: PERL SSG
       url: https://onta.axcora.com
     - title: BAX SSG

@@ -9,7 +9,7 @@
     </p>
     <div class="p-3 mt-3">
       <a href="@luax.showcase.button.url" class="btn-luax me-2 mt-1 mb-1">@luax.showcase.button.text</a>
-      <a href="@luax.showcase.button_ghost.url" class="btn-ghost mt-1 mb-1">@luax.showcase.button_ghost.text ↓</a>
+      <a href="@luax.showcase.button_ghost.url" class="btn-ghost mt-1 mb-1">@luax.showcase.button_ghost.text</a>
     </div>
   </div>
 </section>

@@ -26,7 +26,7 @@ LUAX v0.3 is a lightweight, fast, and modern static site generator built with Lu
 - 🔍 **SEO** - OG, JSON-LD, sitemap, RSS
 
 [^1]: New in v0.3 - auto nested h2 > h3 > h4
-[^2]: New in v0.3 - [^1] style footnotes
+[^2]: New in v0.3 - &#91;^1&#93; style footnotes
 
 ## 📦 Installation v0.3
 
@@ -79,62 +79,62 @@ Complete variables for LAX engine v0.3.
 
 | Variable | Description | Example |
 |----------|-------------|---------|
-| `@title` | Page title | `Docs v0.3` |
-| `@description` | Page description | `Fast SSG` |
-| `@content` | HTML content | `< p>...< /p>` |
-| `@date` | Date | `2024-01-01` |
-| `@current_url` | Current URL[^3] | `/v0.3/docs/` |
-| `@url` | Alias in loops | `/posts/my-post/` |
-| `@slug` | Slug | `about` |
-| `@image` | Image | `/img/cover.webp` |
-| `@collection` | Collection | `v0.3`, `posts` |
+| `&#64;title` | Page title | `Docs v0.3` |
+| `&#64;description` | Page description | `Fast SSG` |
+| `&#64;content` | HTML content | `&lt; p&gt;...&lt; /p&gt;` |
+| `&#64;date` | Date | `2024-01-01` |
+| `&#64;current_url` | Current URL[^3] | `/v0.3/docs/` |
+| `&#64;url` | Alias in loops | `/posts/my-post/` |
+| `&#64;slug` | Slug | `about` |
+| `&#64;image` | Image | `/img/cover.webp` |
+| `&#64;collection` | Collection | `v0.3`, `posts` |
 
-[^3]: Fix v0.3 - use `@current_url` not `@og_url`
+[^3]: Fix v0.3 - use `&#64;current_url` not `&#64;og_url`
 
 ### Site Variables
 
 | Variable | Description |
 |----------|-------------|
-| `@metadata.title` | Site title |
-| `@metadata.description` | Site description |
-| `@metadata.url` | Base URL `https://luax.axcora.com` |
-| `@metadata.image` | Default image |
+| `&#64;metadata.title` | Site title |
+| `&#64;metadata.description` | Site description |
+| `&#64;metadata.url` | Base URL `https://luax.axcora.com` |
+| `&#64;metadata.image` | Default image |
 
 ### URL Construction v0.3
 
 | Usage | Result |
 |-------|--------|
-| `@current_url` | `/v0.3/docs/` |
-| `@metadata.url@current_url` | `https://luax.axcora.com/v0.3/docs/` |
+| `&#64;current_url` | `/v0.3/docs/` |
+| `&#64;metadata.url&#64;current_url` | `https://luax.axcora.com/v0.3/docs/` |
 
 **Fix from old version:**
 
 ```lax
 # OLD v0.2 - WRONG
-@metadata.url@og_url
+&#64;metadata.url&#64;og_url
 
 # NEW v0.3 - CORRECT
-@metadata.url@current_url
+&#64;metadata.url&#64;current_url
 ```
 
 ### Complete Head v0.3
 
 ```lax
-@ if title
-< title>@ title< /title>
-@ else
-< title>@ metadata.title< /title>
-@ end
+&#64; if title
+&lt; title&gt;&#64; title&lt; /title&gt;
+&#64; else
+&lt; title&gt;&#64; metadata.title&lt; /title&gt;
+&#64; end
 
-@ if description
-< meta name="description" content="@ description">
-@ else
-< meta name="description" content="@ metadata.description">
-@end
+&#64; if description
+&lt; meta name="description" content="&#64; description"&gt;
+&#64; else
+&lt; meta name="description" content="&#64; metadata.description"&gt;
+&#64;end
 
-< meta property="og:url" content="@ metadata.url @ current_url">
-< link rel="canonical" href="@ metadata.url @ current_url">
-< meta property="og:image" content="@ metadata.url @ image">
+&lt; meta property="og:url" content="&#64; metadata.url &#64; current_url"&gt;
+&lt; link rel="canonical" href="&#64; metadata.url &#64; current_url"&gt;
+&lt; meta property="og:image" content="&#64; metadata.url &#64; image"&gt;
 ```
 
 ## 📂 File Structure v0.3
@@ -164,9 +164,9 @@ luax start
 
 | Category | Variables |
 |----------|-----------|
-| Page | `@title`, `@description`, `@content`, `@current_url`, `@url`, `@slug`, `@image` |
-| Site | `@metadata.title`, `@metadata.url`, `@metadata.description` |
-| New v0.3 | `toc: true`, `[^1]` footnotes, nested TOC, `@current_url` |
+| Page | `&#64;title`, `&#64;description`, `&#64;content`, `&#64;current_url`, `&#64;url`, `&#64;slug`, `&#64;image` |
+| Site | `&#64;metadata.title`, `&#64;metadata.url`, `&#64;metadata.description` |
+| New v0.3 | `toc: true`, `[^1]` footnotes, nested TOC, `&#64;current_url` |
 
 ---
 
