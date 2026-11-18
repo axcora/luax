@@ -92,7 +92,7 @@
 @if metadata.favicon
 <link rel="icon" href="@luax.url@luax.favicon">
 @end
-
+<meta name="robots" content="index, follow">
 <link rel="canonical" href="@luax.url@current_url">
 
 <script type="application/ld+json">
