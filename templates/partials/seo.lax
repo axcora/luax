@@ -94,7 +94,7 @@
 @end
 
 <link rel="canonical" href="@metadata.url@current_url">
-
+<meta name="robots" content="index, follow">
 <script type="application/ld+json">
 {
   "@@context": "https://schema.org",
